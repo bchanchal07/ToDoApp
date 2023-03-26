@@ -1,4 +1,4 @@
-package com.example.demoapp.practice1.adapter
+package com.example.demoapp.adapter
 
 import android.content.Context
 import android.graphics.Paint
@@ -11,8 +11,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.demoapp.R
-import com.example.demoapp.practice1.model.ToDoData
+import com.example.todolistapp.R
+import com.example.todolistapp.model.ToDoData
 
 class TitleAdapter(private val context : Context ,list: MutableList<ToDoData>) : RecyclerView.Adapter<TitleAdapter.TaskViewHolder>()  {
 
@@ -20,18 +20,14 @@ class TitleAdapter(private val context : Context ,list: MutableList<ToDoData>) :
     init{
         this.list = list
     }
-
     private  val TAG = "TaskAdapter"
     private var listener:TaskAdapterInterface? = null
-    private var addListener: AddDescriptionInterface? = null
     private var descListener: DescInterface? = null
 
+
+    //todo interfaces created---
     interface TaskAdapterInterface{
         fun onEditItemClicked(toDoData: ToDoData , position: Int)
-    }
-
-    interface AddDescriptionInterface {
-        fun onAddDetailsClicked(toDoData: ToDoData, position: Int, titleId: String)
     }
 
     interface DescInterface {
@@ -46,6 +42,7 @@ class TitleAdapter(private val context : Context ,list: MutableList<ToDoData>) :
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         var list :ToDoData = list[position]
 
+        //todo text set.....
         holder.todoTask.text = list.title
 
         Log.d(TAG, "onBindViewHolder: "+this)
@@ -64,11 +61,6 @@ class TitleAdapter(private val context : Context ,list: MutableList<ToDoData>) :
             }
         }
 
-        //todo add desc and image..
-        holder.addDetail.setOnClickListener {
-            addListener?.onAddDetailsClicked(list, position, list.titleId)
-        }
-
         //todo show details...
         holder.constraint_layout.setOnClickListener {
             descListener?.onDescDetailClicked(list, position)
@@ -79,6 +71,7 @@ class TitleAdapter(private val context : Context ,list: MutableList<ToDoData>) :
         return list.size
     }
 
+    //todo view holder...
     class TaskViewHolder(ItemView: View): RecyclerView.ViewHolder(ItemView) {
         var todoTask : TextView = itemView.findViewById(R.id.todoTask)
         var editTask : ImageView = itemView.findViewById(R.id.editTask)
@@ -89,10 +82,6 @@ class TitleAdapter(private val context : Context ,list: MutableList<ToDoData>) :
 
     fun setListener(listener:TaskAdapterInterface){
         this.listener = listener
-    }
-
-    fun setAddListener(addListener: AddDescriptionInterface){
-        this.addListener = addListener
     }
 
     fun setDescListener(descListener: DescInterface){

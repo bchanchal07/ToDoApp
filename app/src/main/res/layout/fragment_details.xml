@@ -6,13 +6,15 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="20dp"
-    tools:context=".practice1.fragment.DetailsFragment">
+    tools:context=".fragment.ToDoDetailsFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
@@ -58,7 +60,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/titleDesc"
+                android:id="@+id/titleId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

@@ -1,4 +1,4 @@
-package com.example.demoapp.practice1.fragment
+package com.example.todolistapp.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,26 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
-import com.example.demoapp.R
-import com.example.demoapp.practice1.model.ToDoData
+import com.example.todolistapp.R
+import com.example.todolistapp.model.ToDoData
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 
 class ToDoDialogFragment : DialogFragment() {
-    private val TAG = "ToDoFragment"
     lateinit var todoClose: ImageView
     lateinit var todoEt: TextInputEditText
-    lateinit var descEt: TextInputEditText
-    lateinit var todoNextBtn: FloatingActionButton
-
+    lateinit var todoSaveBtn: FloatingActionButton
     private var listener : OnDialogNextBtnClickListener? = null
     private var toDoData: ToDoData? = null
 
+    //todo interface created...
     interface OnDialogNextBtnClickListener{
-        fun saveTask(todoTask: String, todoEdit: TextInputEditText, descText: String)
+        fun saveTask(todoTask: String, todoEdit: TextInputEditText)
         fun updateTask(toDoData: ToDoData , todoEdit:TextInputEditText)
     }
 
+    //todo created instance...
     companion object {
         const val TAG = "DialogFragment"
         @JvmStatic
@@ -49,22 +48,23 @@ class ToDoDialogFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         init(view)
 
+        //todo get arguments string..
         if (arguments != null){
             toDoData = ToDoData(arguments?.getString("titleId").toString() ,arguments?.getString("title").toString())
             todoEt.setText(toDoData?.title)
         }
 
+        //todo close dialog fragment-
         todoClose.setOnClickListener {
             dismiss()
         }
 
         //todo update task or cancel..
-        todoNextBtn.setOnClickListener {
+        todoSaveBtn.setOnClickListener {
             val todoTask = todoEt.text.toString()
-            var descText = descEt.text.toString()
             if (todoTask.isNotEmpty()){
                 if (toDoData == null){
-                    listener?.saveTask(todoTask , todoEt, descText)
+                    listener?.saveTask(todoTask , todoEt)
                 }else{
                     toDoData!!.title = todoTask
                     listener?.updateTask(toDoData!!, todoEt)
@@ -78,10 +78,10 @@ class ToDoDialogFragment : DialogFragment() {
         this.listener = listener
     }
 
+    //todo init...
     private fun init(view: View) {
         todoClose = view.findViewById(R.id.todoClose)
         todoEt = view.findViewById(R.id.todoEt)
-        todoNextBtn = view.findViewById(R.id.todoNextBtn)
-        descEt = view.findViewById(R.id.descEt)
+        todoSaveBtn = view.findViewById(R.id.todoSaveBtn)
     }
 }

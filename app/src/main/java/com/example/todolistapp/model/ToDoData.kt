@@ -1,4 +1,4 @@
-package com.example.demoapp.practice1.model
+package com.example.todolistapp.model
 
 data class ToDoData(
     var titleId:String,

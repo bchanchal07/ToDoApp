@@ -7,12 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.demoapp.practice1.fragment.HomeFragment"
+        android:name="com.example.todolistapp.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_desc_ImgaeFragment"
-            app:destination="@id/desc_ImgaeFragment" />
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -22,19 +19,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/desc_ImgaeFragment"
-        android:name="com.example.demoapp.practice1.fragment.Desc_ImgaeFragment"
-        android:label="fragment_desc__imgae"
-        tools:layout="@layout/fragment_desc__imgae">
-
-        <action android:id="@+id/action_desc_ImageFragment_to_homeFragment"
-            app:destination="@+id/homeFragment"/>
-
-    </fragment>
-
-    <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.demoapp.practice1.fragment.DetailsFragment"
+        android:name="com.example.todolistapp.fragment.ToDoDetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
 

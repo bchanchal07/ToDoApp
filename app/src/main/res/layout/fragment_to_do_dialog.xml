@@ -56,33 +56,12 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                app:boxStrokeWidth="0dp"
-                android:visibility="gone"
-                android:layout_marginTop="40dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/descEt"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:hint="Description...."
-                android:inputType="textEmailAddress"
-                android:paddingStart="12dp"
-                android:paddingTop="15dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/todoNextBtn"
+            android:id="@+id/todoSaveBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="fitXY"

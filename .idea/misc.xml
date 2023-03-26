@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1515" />
         <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/each_todo_item.xml" value="0.25" />
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/fragment_details.xml" value="0.25" />
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/fragment_to_do_dialog.xml" value="0.25" />
+        <entry key="..\:/Chanchal_Bhasker/To_Do_List/app/src/main/res/layout/picturedialog.xml" value="0.25" />
       </map>
     </option>
   </component>

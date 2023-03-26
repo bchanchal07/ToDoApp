@@ -12,26 +12,20 @@ import com.example.todolistapp.model.ToDoData
 import com.google.android.material.textfield.TextInputEditText
 import de.hdodenhof.circleimageview.CircleImageView
 
-class DetailsFragment : DialogFragment() {
+class ToDoDetailsFragment : DialogFragment() {
 
-    private val TAG = "ToDoFragment"
     lateinit var titleName: TextView
-    lateinit var titleDesc: TextView
+    lateinit var titleId: TextView
     lateinit var iv_set_profile: CircleImageView
     lateinit var detailClose: ImageView
-
-    private var listener : DetailsFragment.OnDialogNextBtnClickListener? = null
     private var toDoData: ToDoData? = null
 
-    interface OnDialogNextBtnClickListener{
-        fun saveTask(todoTask: String, todoEdit: TextInputEditText)
-    }
-
+    //todo created instance...
     companion object {
         const val TAG = "DetailsFragment"
         @JvmStatic
         fun newInstance(taskId: String, task: String) =
-            DetailsFragment().apply {
+            ToDoDetailsFragment().apply {
                 arguments = Bundle().apply {
                     putString("titleId", taskId)
                     putString("title", task)
@@ -52,26 +46,23 @@ class DetailsFragment : DialogFragment() {
 
         init(view)
 
+        //todo get arguments string..
         if (arguments != null){
-//            detailData = DetailsModel(arguments?.getString("desc").toString() ,arguments?.getString("image").toString())
             toDoData = ToDoData(arguments?.getString("titleId").toString() ,arguments?.getString("title").toString())
             titleName.text = toDoData?.title
-            titleDesc.setText(toDoData?.titleId)
+            titleId.setText(toDoData?.titleId)
         }
 
+        //todo close dialog---
         detailClose.setOnClickListener {
             dismiss()
         }
-
     }
 
-    fun setListener(listener: OnDialogNextBtnClickListener) {
-        this.listener = listener
-    }
-
+    //todo init...
     private fun init(view: View) {
         titleName = view.findViewById(R.id.titleName)
-        titleDesc = view.findViewById(R.id.titleDesc)
+        titleId = view.findViewById(R.id.titleId)
         iv_set_profile = view.findViewById(R.id.iv_set_profile)
         detailClose = view.findViewById(R.id.detailClose)
     }
