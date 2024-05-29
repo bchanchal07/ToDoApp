@@ -18,7 +18,7 @@ Welcome to the Todo App! This app helps you keep track of your tasks efficiently
 ## Screenshots
 
 ### Home Screen
-![Home Screen]([https://github.com/bchanchal07/ToDoApp/assets/114682403/928eb018-64f7-42a9-b12c-46d477a7c1d0](https://github.com/bchanchal07/ToDoApp/assets/114682403/14b339be-7489-4687-be46-4a1358981c02))
+![Home Screen]([https://github.com/bchanchal07/ToDoApp/assets/114682403/928eb018-64f7-42a9-b12c-46d477a7c1d0](https://github.com/bchanchal07/ToDoApp/assets/114682403/14b339be-7489-4687-be46-4a1358981c02)
 
 ### Add Task Screen
 ![Add Task Screen](screenshots/add_task_screen.png)
